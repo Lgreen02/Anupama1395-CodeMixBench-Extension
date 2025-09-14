@@ -59,7 +59,7 @@ and few-shot learning can improve LLM performance on code-mixing datasets.
    pip install -r requirements.txt
    ```
    
-## 🚀 Launch LocAgent
+## 🚀 Launch CodeMixBench
 
    ```
    python ./test_model.py \
