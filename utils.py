@@ -117,7 +117,7 @@ def generate_MMLU_Prompts(dataset:str, model:str, df:df=None, shot:int=1) -> lis
                     continue
                 if random_row['sentence'].values[0] in examples_str:
                     continue
-                example_str = f"{random_row['sentence'].values[0]}\nAnswer: {random_row['tags'].values[0]}\n"
+                example_str = f"{random_row['sentence'].values[0]}\nAnswer: {random_row['answer'].values[0]}\n"
                 examples_str += example_str
                 shot_number-=1
 
@@ -143,7 +143,7 @@ def generate_MMLU_Prompts(dataset:str, model:str, df:df=None, shot:int=1) -> lis
                     })
                 prompt.append({
                         "role": "assistant",
-                        "content": f"{random_row['tags'].values[0]}"
+                        "content": f"{random_row['answer'].values[0]}"
                     })
                 shot_number += 1
 
@@ -180,7 +180,7 @@ def generate_GSM8K_Prompts(dataset:str, model:str, df:df=None, shot:int=1) -> li
                 random_row = df.sample(n=1)
                 if row['index'] == random_row['index'].values[0]:
                     continue
-                example_str = f"Problem: {random_row['sentence'].values[0]}\nSolution: {random_row['cot'].values[0]}\nFinal Answer: {random_row['tags'].values[0]} [stop]\n\n"
+                example_str = f"Problem: {random_row['sentence'].values[0]}\nSolution: {random_row['cot'].values[0]}\nFinal Answer: {random_row['answer'].values[0]} [stop]\n\n"
                 examples_str += example_str
                 shot_number-=1
             if shot == 0:
@@ -211,7 +211,7 @@ def generate_GSM8K_Prompts(dataset:str, model:str, df:df=None, shot:int=1) -> li
                     })
                 prompt.append({
                         "role": "assistant",
-                        "content": f"Solution:\n{random_row['cot'].values[0]}\n\n\nFinal Answer: {random_row['tags'].values[0]}"
+                        "content": f"Solution:\n{random_row['cot'].values[0]}\n\n\nFinal Answer: {random_row['answer'].values[0]}"
                     })
                 shot_number += 1
             #template[1]['content'] = f"Examples:\n\n{examples_str}\nRead and follow the format of the examples above. Output the solution and final answer for the next problem. The solution should include the entire process of calculating the final answer. The final answer to the problem is just one definite numerical value. Don't output the problem. Output in this format:\nSolution:\nFinal answer: (one definite numerical value)\n\nProblem: {row['sentence']}"
@@ -250,7 +250,7 @@ def generate_TruthfulQA_Prompts(dataset:str, model:str, df:df=None, shot:int=1) 
                     continue
                 if random_row['sentence'].values[0] in examples_str:
                     continue
-                example_str = f"{random_row['sentence'].values[0]}\nAnswer: {random_row['tags'].values[0]}\n"
+                example_str = f"{random_row['sentence'].values[0]}\nAnswer: {random_row['answer'].values[0]}\n"
                 examples_str += example_str
                 shot_number-=1
 
@@ -275,7 +275,7 @@ def generate_TruthfulQA_Prompts(dataset:str, model:str, df:df=None, shot:int=1) 
                     })
                 prompt.append({
                         "role": "assistant",
-                        "content": f"{random_row['tags'].values[0]}"
+                        "content": f"{random_row['answer'].values[0]}"
                     })
                 shot_number += 1
 
@@ -655,7 +655,7 @@ async def analyse_Token_Label_Result(
     pred, formatErrorIndices = result2pred(results, true_df, model)
 
     logger.warning(f"index {formatErrorIndices} have format errors !")
-    pred['true'] = true_df['tags']
+    pred['true'] = true_df['answer']
     pred.to_csv(predFilePath, index=False, encoding='utf-8')
     logger.info(f" Save the final prediction into {predFilePath}.")
     results.to_csv(rawPath, index=False, encoding='utf-8')
@@ -756,7 +756,7 @@ async def analyse_Sentence_Label_Result(
         
         try:
             sentence = true_df.loc[true_df.loc[results['index'] == index].index[0], 'sentence']
-            true_tag = true_df.loc[true_df.loc[results['index'] == index].index[0], 'tags']
+            true_tag = true_df.loc[true_df.loc[results['index'] == index].index[0], 'answer']
         except:
             logger.error(f"Fail to get sentence and true label from true_df: {index}")
             raise
@@ -1005,11 +1005,11 @@ def checkLength(true:df, pred:df, format_error_list:list) -> list:
         if index in format_error_list:
             continue
         if index in true['index'].values:
-            truetags = true.loc[true['index'] == index, 'tags'].iloc[0]
+            trueanswer = true.loc[true['index'] == index, 'answer'].iloc[0]
             trueTokens = true.loc[true['index'] == index, 'tokens'].iloc[0]
             
             try:
-                trueList = ast.literal_eval(str(truetags))
+                trueList = ast.literal_eval(str(trueanswer))
             except Exception as e:
                 logger.error(f"Somthing Error: {e}:\n{str(trueList)}")
             try:
@@ -1020,12 +1020,12 @@ def checkLength(true:df, pred:df, format_error_list:list) -> list:
 
             if len(predList) == len(trueList):
                 checkLength.append(len(predList) == len(trueList))
-                #logger.debug(f"Index {index} : Lengths of true tags list and pred tags list are {len(predList)}.")
+                #logger.debug(f"Index {index} : Lengths of true answer list and pred answer list are {len(predList)}.")
             else:
                 checkLength.append(len(predList) == len(trueList))
                 lenNotEqual.append(index)
                 #messageList.append(predRow['messages'])
-                logger.debug(f"index {index} : Length of true tags list is {len(trueList)} while length of pred tags list is {len(predList)}.\
+                logger.debug(f"index {index} : Length of true answer list is {len(trueList)} while length of pred answer list is {len(predList)}.\
                              \n{trueTokens}\
                              \n{predRow['tokens']}")
     checkLength = all(checkLength)

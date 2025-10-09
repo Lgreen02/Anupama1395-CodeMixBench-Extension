@@ -63,9 +63,9 @@ def main() -> None:
         path = f"{task}/{dataset}.csv"
         )
     if task in 'lid, pos, ner':
-        true_df = df[['index', 'tokens', 'tags']]        #改命名
+        true_df = df[['index', 'tokens', 'answer']]        #改命名
     elif task in 'sa, mt, mmlu, gsm8k, truthfulqa':
-        true_df = df[['index', 'sentence','tags']]
+        true_df = df[['index', 'sentence','answer']]
 
 
     #------------- Generate prompts -----------------
