@@ -5,7 +5,7 @@
       <img alt="Huggingface" src="https://img.shields.io/badge/🤗-Huggingface-blue" />
    </a>
         
-  <a href="https://arxiv.org/abs/2507.18791" target="_blank">
+  <a href="https://aclanthology.org/2025.emnlp-main.109/" target="_blank">
       <img alt="Paper" src="https://img.shields.io/badge/📜-Paper-purple" />
    </a>
   <a href="https://2025.emnlp.org/" target="_blank">
@@ -86,13 +86,23 @@ and few-shot learning can improve LLM performance on code-mixing datasets.
 **BibTeX:**
 
   ```
-   @misc{yang2025codemixbenchevaluatingcodemixingcapabilities,
-      title={CodeMixBench: Evaluating Code-Mixing Capabilities of LLMs Across 18 Languages}, 
-      author={Yilun Yang and Yekun Chai},
-      year={2025},
-      eprint={2507.18791},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL},
-      url={https://arxiv.org/abs/2507.18791}, 
+@inproceedings{yang-chai-2025-codemixbench,
+    title = "{C}ode{M}ix{B}ench: Evaluating Code-Mixing Capabilities of {LLM}s Across 18 Languages",
+    author = "Yang, Yilun  and
+      Chai, Yekun",
+    editor = "Christodoulopoulos, Christos  and
+      Chakraborty, Tanmoy  and
+      Rose, Carolyn  and
+      Peng, Violet",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    address = "Suzhou, China",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.109/",
+    doi = "10.18653/v1/2025.emnlp-main.109",
+    pages = "2139--2169",
+    ISBN = "979-8-89176-332-6",
+    abstract = "Code-mixing, the practice of switching between languages within a conversation, poses unique challenges for traditional NLP. Existing benchmarks like LinCE and GLUECoS are limited by their narrow language pairs and tasks, failing to adequately assess large language models' (LLMs) code-mixing abilities. Despite the recognized importance of code-mixing for multilingual users, research on LLMs in this context remains sparse. Additionally, current techniques for synthesizing code-mixed data are underdeveloped to generate code-mixing. In response, we introduce CodeMixBench, a comprehensive benchmark covering eight tasks, including three specific to LLMs and five traditional NLP tasks, and 18 languages from seven language families. We also propose a new method for generating large-scale synthetic code-mixed texts by combining word substitution with GPT-4 prompting. Our evaluation reveals consistent underperformance of LLMs on code-mixed datasets involving different language families. Enhancements in training data size, model scale, and few-shot learning could improve their performance. The code and dataset are available at https://github.com/Jeromeyluck/CodeMixBench."
 }
   ```
