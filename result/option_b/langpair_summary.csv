@@ -1,0 +1,12 @@
+lang_pair,mean_degradation,phylo_distance,wals_distance,family
+ta-en,0.2619333365373469,2,0.72,Dravidian
+ne-en,0.21416367186280372,1,0.56,Indo-Aryan
+bn-en,0.21182788745532097,1,0.57,Indo-Aryan
+mr-en,0.1967320944365012,1,0.59,Indo-Aryan
+ar-en,0.15022847246582188,2,0.67,Afro-Asiatic
+hi-en,0.13247145968997515,1,0.55,Indo-Aryan
+zh-en,0.08187819648072416,2,0.62,Sino-Tibetan
+nl-en,0.019842374431679268,0,0.25,Germanic
+es-en,0.014649797586262673,1,0.39,Romance
+de-en,0.014586477520098349,0,0.28,Germanic
+fr-en,0.005822687798598965,1,0.38,Romance

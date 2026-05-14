@@ -1,0 +1,17 @@
+scope,distance_type,spearman_rho,p_value,n
+GPT-3.5-Instruct,Phylogenetic,0.503,0.1152,11
+GPT-3.5-Turbo,Phylogenetic,0.382,0.2464,11
+GPT-4-Turbo,Phylogenetic,0.509,0.1101,11
+GPT-4o,Phylogenetic,0.467,0.1472,11
+LLaMA2-7B,Phylogenetic,0.508,0.111,11
+LLaMA3-70B,Phylogenetic,0.513,0.1069,11
+Mixtral-8x22B,Phylogenetic,0.382,0.2464,11
+ALL MODELS (pooled),Phylogenetic,0.435,0.0001,77
+GPT-3.5-Instruct,WALS,0.727,0.0112,11
+GPT-3.5-Turbo,WALS,0.664,0.026,11
+GPT-4-Turbo,WALS,0.788,0.004,11
+GPT-4o,WALS,0.736,0.0098,11
+LLaMA2-7B,WALS,0.7,0.0165,11
+LLaMA3-70B,WALS,0.773,0.0053,11
+Mixtral-8x22B,WALS,0.664,0.026,11
+ALL MODELS (pooled),WALS,0.647,0.0,77
