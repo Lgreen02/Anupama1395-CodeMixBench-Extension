@@ -9,6 +9,10 @@ Results can be found in the results folder and on the paper.
 
 <img width="496" height="334" alt="image" src="https://github.com/user-attachments/assets/edab027e-7fe0-460c-af87-7fa6729540eb" />
 
+<img width="675" height="183" alt="image" src="https://github.com/user-attachments/assets/16eb66e1-5129-4233-bea5-fed42df52c28" />
+<img width="675" height="183" alt="image" src="https://github.com/user-attachments/assets/29d9bf0c-90f9-46a5-ba04-4c0d2547075b" />
+<img width="1418" height="548" alt="image" src="https://github.com/user-attachments/assets/74f445f5-6e24-4cd1-886a-8fdf1ec2aa49" />
+<img width="840" height="525" alt="image" src="https://github.com/user-attachments/assets/5cdc8566-1dda-4c98-8711-28409bc64e15" />
 
 # [EMNLP'25] CodeMixBench: Evaluating Code-Mixing Capabilities of LLMs Across 18 Languages
 
