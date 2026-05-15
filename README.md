@@ -1,3 +1,11 @@
+# Anupama1395-CodeMixBench-Extension
+Team Members: Anumpama Singh, Srivalli Kakumani, Carson Green
+
+To run the model all you need to do is install the requirements.txt 
+and run the python test_model.py
+After after that, you can run our extension scripts by running the scripts in the addition folder
+
+Results can be found in the results folder and on the paper.
 # [EMNLP'25] CodeMixBench: Evaluating Code-Mixing Capabilities of LLMs Across 18 Languages
 
 <p align="center">
@@ -106,4 +114,4 @@ and few-shot learning can improve LLM performance on code-mixing datasets.
     abstract = "Code-mixing, the practice of switching between languages within a conversation, poses unique challenges for traditional NLP. Existing benchmarks like LinCE and GLUECoS are limited by their narrow language pairs and tasks, failing to adequately assess large language models' (LLMs) code-mixing abilities. Despite the recognized importance of code-mixing for multilingual users, research on LLMs in this context remains sparse. Additionally, current techniques for synthesizing code-mixed data are underdeveloped to generate code-mixing. In response, we introduce CodeMixBench, a comprehensive benchmark covering eight tasks, including three specific to LLMs and five traditional NLP tasks, and 18 languages from seven language families. We also propose a new method for generating large-scale synthetic code-mixed texts by combining word substitution with GPT-4 prompting. Our evaluation reveals consistent underperformance of LLMs on code-mixed datasets involving different language families. Enhancements in training data size, model scale, and few-shot learning could improve their performance. The code and dataset are available at https://github.com/Jeromeyluck/CodeMixBench."
 }
   ```
-# Anupama1395-CodeMixBench-Extension
+
