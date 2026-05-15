@@ -6,6 +6,10 @@ and run the python test_model.py
 After after that, you can run our extension scripts by running the scripts in the addition folder
 
 Results can be found in the results folder and on the paper.
+
+<img width="496" height="334" alt="image" src="https://github.com/user-attachments/assets/edab027e-7fe0-460c-af87-7fa6729540eb" />
+
+
 # [EMNLP'25] CodeMixBench: Evaluating Code-Mixing Capabilities of LLMs Across 18 Languages
 
 <p align="center">
